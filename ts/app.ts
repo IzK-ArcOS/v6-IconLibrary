@@ -1,33 +1,35 @@
-import { DefaultIcon } from "$ts/images/apps";
-import { Runtime } from "./runtime";
-import AppSvelte from "../App.svelte";
+import { IconLibraryIcon } from "$ts/images/apps";
 import { App } from "$types/app";
+import AppSvelte from "../App.svelte";
+import { Runtime } from "./runtime";
 
-export const app: App = {
+export const IconLibrary: App = {
   metadata: {
-    name: "App Template",
-    description: "This is an app template",
-    author: "The ArcOS Team",
-    version: "0.0.0",
-    icon: DefaultIcon
+    name: "Icon Library",
+    description: "View the icons used in ArcOS",
+    author: "Izaak Kuipers",
+    version: "1.0.1",
+    icon: IconLibraryIcon,
+    hidden: true,
+    appGroup: "utilities"
   },
   runtime: Runtime,
   content: AppSvelte,
-  id: "appTemplate",
-  size: { w: 0, h: 0 },
-  minSize: { w: 0, h: 0 },
-  maxSize: { w: 0, h: 0 },
-  pos: { x: 0, y: 0 },
+  id: "IconLibrary",
+  size: { w: 595, h: NaN },
+  minSize: { w: 500, h: 470 },
+  maxSize: { w: NaN, h: NaN },
+  pos: { x: 30, y: 40 },
   state: {
     minimized: false,
     maximized: false,
     headless: false,
     fullscreen: false,
-    resizable: false
+    resizable: true
   },
   controls: {
-    minimize: false,
-    maximize: false,
-    close: false
+    minimize: true,
+    maximize: true,
+    close: true
   }
 }

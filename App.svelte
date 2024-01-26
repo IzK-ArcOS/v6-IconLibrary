@@ -1,9 +1,25 @@
 <script lang="ts">
-  import { App } from "$types/app";
+  import { getGroupedIcons } from "$ts/images";
+  import { ICON_GROUP_CAPTIONS } from "$ts/stores/images";
+  import { onMount } from "svelte";
   import "./css/main.css";
 
-  export let app: App;
+  let groups: { [key: string]: { [key: string]: string } };
+
+  onMount(() => {
+    groups = getGroupedIcons();
+  });
 </script>
 
-<h1>Hello, World!</h1>
-<p>Working! App {app.metadata.name}, version {app.metadata.version}.</p>
+{#if groups}
+  {#each Object.entries(groups) as [id, items]}
+    <div class="group group-{id}">
+      <h2 class="header">{ICON_GROUP_CAPTIONS[id] || id}</h2>
+      <div class="icons">
+        {#each Object.entries(items) as [icon, url]}
+          <img src={url} title={icon} alt={icon} class="icon" />
+        {/each}
+      </div>
+    </div>
+  {/each}
+{/if}
