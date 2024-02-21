@@ -11,7 +11,7 @@ export const IconLibrary: App = {
     version: "1.0.1",
     icon: IconLibraryIcon,
     hidden: true,
-    appGroup: "utilities"
+    appGroup: "utilities",
   },
   runtime: Runtime,
   content: AppSvelte,
@@ -25,11 +25,11 @@ export const IconLibrary: App = {
     maximized: false,
     headless: false,
     fullscreen: false,
-    resizable: true
+    resizable: true,
   },
   controls: {
     minimize: true,
     maximize: true,
-    close: true
-  }
-}
+    close: true,
+  },
+};
