@@ -1,3 +1,4 @@
+import { SafeMode } from "$state/Desktop/ts/store";
 import { IconLibraryIcon } from "$ts/images/apps";
 import { App } from "$types/app";
 import AppSvelte from "../App.svelte";
@@ -32,4 +33,5 @@ export const IconLibrary: App = {
     maximize: true,
     close: true,
   },
+  loadCondition: () => !SafeMode.get(),
 };
