@@ -40,7 +40,7 @@
   height: 48px;
   padding: 8px;
   background-color: var(--button-glass-bg);
-  border-radius: 6px;
+  border-radius: var(--button-border-rad);
 }
 
 #IconLibrary > div.body div.group div.icons img:hover {
